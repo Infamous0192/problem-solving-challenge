@@ -16,6 +16,6 @@ public class BallControl : MonoBehaviour
 
     void PushBall()
     {
-        rb2d.AddForce(new Vector2(Random.Range(-20, 20), Random.Range(-20, 20)));
+        rb2d.AddForce(new Vector2(20, 15));
     }
 }
