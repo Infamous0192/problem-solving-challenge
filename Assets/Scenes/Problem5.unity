@@ -807,9 +807,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1092919264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36d5673dc5e18be4f8f0d0b104a4d672, type: 3}
+  m_Script: {fileID: 11500000, guid: c1d74fb7890a47442b052e3bd25f213d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 268381630}
 --- !u!850595691 &1346783261
 LightingSettings:
   m_ObjectHideFlags: 0
