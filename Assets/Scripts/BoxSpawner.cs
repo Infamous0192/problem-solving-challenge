@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class BoxSpawner : MonoBehaviour
 {
+    private static BoxSpawner _instance = null;
+    public static BoxSpawner Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<BoxSpawner>();
+            }
+
+            return _instance;
+        }
+    }
     public GameObject box;
     public int maxBox = 7;
 
@@ -14,18 +27,17 @@ public class BoxSpawner : MonoBehaviour
         {
             Instantiate(box, Random.insideUnitSphere * 4.5f, Quaternion.identity);
         }
-        // InvokeRepeating("SpawnBox", 0, 1f);
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    // Spawn Box dalam detik
+    public void SpawnBox(float sec)
     {
-
+        Invoke("SpawnABox", sec);
     }
 
-    // void SpawnBox()
-    // {
-    //     int boxCount = GameObject.FindGameObjectsWithTag("Box").Length;
-    //     if (boxCount <= maxBox) Instantiate(box);
-    // }
+    void SpawnABox() {
+        int boxCount = GameObject.FindGameObjectsWithTag("Box").Length;
+        // Spawn box jika box kurang dari maksimal
+        if (boxCount <= maxBox) Instantiate(box, Random.insideUnitSphere * 4.5f, Quaternion.identity);
+    }   
 }

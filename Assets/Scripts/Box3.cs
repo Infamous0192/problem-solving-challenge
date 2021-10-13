@@ -2,18 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Box2 : MonoBehaviour
+public class Box3 : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         transform.localScale = new Vector2(Random.Range(.2f, .6f), Random.Range(.2f, .6f));
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -21,6 +14,7 @@ public class Box2 : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             ScoreController.Instance.TakeScore();
+            BoxSpawner.Instance.SpawnBox(3f);
             Destroy(gameObject);
         }
     }
