@@ -12,7 +12,7 @@ public class BoxSpawner : MonoBehaviour
     {
         for (int i = 0; i < maxBox; i++)
         {
-            Instantiate(box);
+            Instantiate(box, Random.insideUnitSphere * 4.5f, Quaternion.identity);
         }
         // InvokeRepeating("SpawnBox", 0, 1f);
     }
